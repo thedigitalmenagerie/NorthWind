@@ -55,14 +55,10 @@ from Orders
 where year(OrderDate) = 1997 */
 
 
-/* select TOP(1)
-	Employee.FirstName,
-	Employee.LastName,
-	sum(case when InvoiceDate between '2009-01-01 00:00:00:000' AND '2009-12-31 00:00:00:000' then Total else 0 end) [Total Sales]
-from Invoice
-	join Customer on Customer.CustomerId = Invoice.CustomerId
-	join Employee on Employee.EmployeeId = Customer.SupportRepId
-group by Employee.FirstName, Employee.LastName
-order by [Total Sales] DESC */
-
 -- 7. Which products have a price that is higher than average?--
+
+/* select *
+from Products
+where UnitPrice > (select avg(UnitPrice)
+						from Products)
+order by UnitPrice DESC */

@@ -33,5 +33,11 @@ from Categories
 group by CategoryName */
 
 -- 5. What are our 10 most expensive products? --
+
+/* select TOP(10) UnitPrice, ProductName
+from Products
+group by UnitPrice, ProductName
+order by UnitPrice DESC */
+
 -- 6. In which quarter in 1997 did we have the most revenue?--
 -- 7. Which products have a price that is higher than average?--

@@ -25,6 +25,13 @@ group by OrderID */
 
 /* 4. I need a list of sales figures broken down by category name.
 Include the total $ amount sold over all time and the total number of items sold.*/
+
+/* select CategoryName, sum([Order Details].UnitPrice * Quantity) [Total Sales], sum(Quantity) [Total Units Sold]
+from Categories
+	join Products on Categories.CategoryID = Products.CategoryID
+	join [Order Details] on Products.ProductID = [Order Details].ProductID
+group by CategoryName */
+
 -- 5. What are our 10 most expensive products? --
 -- 6. In which quarter in 1997 did we have the most revenue?--
 -- 7. Which products have a price that is higher than average?--
